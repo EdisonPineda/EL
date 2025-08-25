@@ -31,9 +31,17 @@ body.lock-scroll {
   display: flex;
   gap: 0.3em;
   z-index: 10;
-  color: rgb(255, 255, 255);
-  font-size: 4rem;
+  color: white;
+  font-size: 4rem; /* Default for desktop */
+  flex-wrap: wrap; /* allow wrapping if needed */
 }
+
+/* Mobile fix */
+@media (max-width: 480px) {
+  .text {
+    font-size: 2.5rem;  /* smaller so "Stand by..." fits */
+    gap: 0.15em;        /* tighter spacing */
+  }
 
 .char {
   opacity: 0;
