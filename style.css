@@ -29,7 +29,9 @@ body.lock-scroll {
 
 .text {
   display: flex;
-  gap: 0.3em;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically inside container */
+  gap: 0.2em;
   z-index: 10;
   color: rgb(255, 255, 255);
   font-size: 4rem;
