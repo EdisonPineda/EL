@@ -31,17 +31,11 @@ body.lock-scroll {
   display: flex;
   gap: 0.3em;
   z-index: 10;
-  color: white;
-  font-size: 4rem; /* Default for desktop */
-  flex-wrap: wrap; /* allow wrapping if needed */
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  text-align: center;
+  flex-wrap: wrap;
 }
-
-/* Mobile fix */
-@media (max-width: 480px) {
-  .text {
-    font-size: 2.5rem;  /* smaller so "Stand by..." fits */
-    gap: 0.15em;        /* tighter spacing */
-  }
 
 .char {
   opacity: 0;
@@ -114,7 +108,7 @@ body.lock-scroll {
   transform: translate(-50%, 40px);
   transition: opacity 1s ease, transform 1s ease;
   position: absolute;
-  top: 45%;
+  top: center;
   left: 50%;
   z-index: 10;
   color: #222222;
@@ -150,16 +144,6 @@ section {
 #home { background: rgb(155, 0, 0); color: rgb(255, 255, 255); }
 #about { background: #7c2100; color: black; }
 #contact { background: #570101; color: white; }
-
-@media (min-width: 769px) {
-  h1 { font-size: 4.5rem; }
-  p { font-size: 2rem; }
-}
-
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  p { font-size: 1.2rem; }
-}
 
 /* Logos scrolling */
 @keyframes slide {
@@ -209,12 +193,22 @@ section {
   margin: 0 40px;
 }
 
-    .v-line {
-      width: 75%;              /* kapal ng linya */
-      height: 2px;             /* haba ng linya (80% ng screen height) */
-      background-color: rgb(0, 0, 0); /* kulay ng linya */
-        margin: auto;       /* naka-center */
- 
- 
- 
-    }
+/* Divider line */
+.v-line {
+  width: 75%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  margin: auto;
+}
+
+/* Responsive Text Fixes */
+@media (min-width: 769px) {
+  h1 { font-size: 4.5rem; }
+  p { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 3rem; }  /* slightly bigger on phone */
+  p { font-size: 2rem; }   /* slightly bigger on phone */
+  .text { font-size: 3rem; } /* make Stand by... smaller to fit */
+}
