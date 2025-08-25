@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: #f9cfc0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body.lock-scroll {
+  overflow: hidden;
+}
+
+/* Intro Container */
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: black;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+  gap: 0.3em;
+  z-index: 10;
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+}
+
+.char {
+  opacity: 0;
+  transform: translateY(30px) scale(1.2);
+  transition: all 0.4s ease;
+  display: inline-block;
+}
+
+.char.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.wipe {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  background: #f9cfc0;
+  z-index: 5;
+  width: 0;
+  transform: translateX(-50%);
+  transition: width 2s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(70, 70, 70, 0.8);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 1s ease, opacity 1s ease;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-left {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.navbar-right a:hover {
+  color: #f9cfc0;
+}
+
+/* Portfolio text */
+.portfolio {
+  opacity: 0;
+  transform: translate(-50%, 40px);
+  transition: opacity 1s ease, transform 1s ease;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  z-index: 10;
+  color: #222222;
+  text-align: center;
+}
+
+.portfolio.show {
+  opacity: 1;
+  transform: translate(-50%, -20px);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: rgb(0, 0, 0);
+}
+
+p {
+  font-size: 1.7rem;
+  color: rgb(0, 0, 0);
+}
+
+/* Sections */
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+#home { background: rgb(155, 0, 0); color: rgb(255, 255, 255); }
+#about { background: #7c2100; color: black; }
+#contact { background: #570101; color: white; }
+
+@media (min-width: 769px) {
+  h1 { font-size: 4.5rem; }
+  p { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  p { font-size: 1.2rem; }
+}
+
+/* Logos scrolling */
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 30px 0;
+  background: #f9cfc0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(249, 207, 192, 0), #f9c0c08a);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(249, 207, 192, 0), #f9c0c08a);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+    .v-line {
+      width: 75%;              /* kapal ng linya */
+      height: 2px;             /* haba ng linya (80% ng screen height) */
+      background-color: rgb(0, 0, 0); /* kulay ng linya */
+        margin: auto;       /* naka-center */
+ 
+ 
+ 
+    }
